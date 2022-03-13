@@ -18,19 +18,30 @@ export const HomeList = () => {
   };
 
   return (
-    <div className="container bg-black h-100vw">
-      <Header/>
+    <div className="bg-black h-100vw w-100vw">
+      <div className="container m-auto">
+        <Header />
 
-      <div className="d-flex justify-content-center my-1">
-        <input className="radius-10 py-1 px-2 fs-5 outline-none border-none" type="text" placeholder="Tu canción" onChange={changeInput} />
-        <button className="radius-10 py-1 px-2 bg-green fs-4 border-none ms-1" type="button" onClick={handleSubmit}>
-           <i className="fa-solid fa-magnifying-glass"></i>
-        </button>
+        <div className="d-flex justify-content-center my-1 justify-content-md-end">
+          <input
+            className="radius-10 search outline-none border-none"
+            type="text"
+            placeholder="Tu canción"
+            onChange={changeInput}
+          />
+          <button
+            className="radius-10 search  px-2 bg-green border-none ms-1"
+            type="button"
+            onClick={handleSubmit}
+          >
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <main className="bg-light h-65 text-dark mt-5 rounded-3 p-1 overflow-scroll">
+          <Results />
+        </main>
       </div>
-      
-      <main className="bg-light h-65 text-dark mt-5 rounded-3 p-1 overflow-scroll">
-        <Results />
-      </main>
     </div>
   );
 };
